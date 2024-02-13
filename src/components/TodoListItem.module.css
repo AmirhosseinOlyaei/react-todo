@@ -145,12 +145,12 @@ input {
     border-radius: 5px;
     margin: 5px;
     align-items: center;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
 .container:hover {
-    box-shadow: rgba(149, 157, 165, 0.124) 0px 8px 24px;
-    background-color: whitesmoke;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
+    /* background-color: whitesmoke; */
 }
 
 .container .column:first-child,
