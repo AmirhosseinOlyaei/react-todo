@@ -6,7 +6,10 @@ import SvgLogo from "./SvgLogo";
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <SvgLogo height="50px" width="50px" />
+      <div className={styles.navLinks}>
+        <SvgLogo height="50px" width="50px" />
+        <h1 className={styles.navTitle}>Tasks App</h1>
+      </div>
       <div className={styles.navLinks}>
         <Link to="/home" className={style.button}>
           Home
