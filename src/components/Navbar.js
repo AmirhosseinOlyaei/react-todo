@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.navLinks}>
         <SvgLogo height="50px" width="50px" />
-        <h1 className={styles.navTitle}>Tasks App</h1>
+        <h1 className={styles.navTitle}>Task Minder</h1>
       </div>
       <div className={styles.navLinks}>
         <Link to="/home" className={style.button}>
