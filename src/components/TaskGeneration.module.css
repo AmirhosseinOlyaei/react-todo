@@ -54,3 +54,17 @@
 .h1Style {
     text-align: center;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.loader {
+    animation: fadeIn 7s ease-in-out forwards;
+}

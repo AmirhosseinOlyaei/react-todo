@@ -3,12 +3,18 @@ import axios from "axios";
 import styles from "./TodoListItem.module.css";
 import style from "./TaskGeneration.module.css";
 import ReactMarkdown from "react-markdown";
+import loadingSpinner from "../image_processing.gif";
 
 const TaskGeneration = () => {
   const [generatedTasks, setGeneratedTasks] = useState([]);
+  const [loading, setLoading] = useState(false);
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const generateTasks = async () => {
+    setGeneratedTasks([]);
+
+    setLoading(true);
+
     const prompt =
       "Generate 5 creative and engaging tasks for a todo list application.";
     const apiEndpoint = "https://api.openai.com/v1/chat/completions";
@@ -26,9 +32,11 @@ const TaskGeneration = () => {
         headers: apiHeaders,
       });
       const tasks = response.data.choices[0].message.content.split("\n");
-      setGeneratedTasks(tasks);
+      setGeneratedTasks(tasks.filter((task) => task.trim() !== ""));
     } catch (error) {
       console.error("Error generating tasks: ", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,6 +50,9 @@ const TaskGeneration = () => {
       <button onClick={generateTasks} className={styles.button}>
         Generate Tasks
       </button>
+      {loading && (
+        <img src={loadingSpinner} alt="Loading..." className={style.loader} />
+      )}
       <div className={style.generatedListContainer}>
         {generatedTasks.map((task, index) => (
           // Treat each task as markdown content
