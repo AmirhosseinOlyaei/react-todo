@@ -50,3 +50,7 @@
     transform: translateY(-2px);
     /* Slight raise effect on hover for interactivity */
 }
+
+.h1Style {
+    text-align: center;
+}

@@ -34,7 +34,7 @@ const TaskGeneration = () => {
 
   return (
     <section>
-      <h1>
+      <h1 className={style.h1Style}>
         Generate 5 creative and engaging tasks for a todo list application
       </h1>
       <hr />
