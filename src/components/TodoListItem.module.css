@@ -229,6 +229,11 @@ section {
         min-width: fit-content;
     }
 
+    input {
+        padding: 2px 5px 2px 5px;
+        margin: 5px;
+    }
+
     .inputContainer {
         padding: 0px 8px 10px 20px;
     }
